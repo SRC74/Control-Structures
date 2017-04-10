@@ -10,31 +10,19 @@
 
 
 //*********************** VARIABLES **********************************
-int tempAigua = 97;
-
-
+int comptar = 11;
 
 //************************* SETUP ************************************
 
 void setup() {      // configura el final de salida
   
-Serial.begin(9600);     // set up Serial library at 9600 bps
-
-  if ( tempAigua < 97)
+  Serial.begin(9600);       // set up Serial library at 9600 bps
+  Serial.print("Ara comptare de 0 a ");
+  Serial.println(comptar);
+  for (int i=0; i = comptar; i++)
   {
-    Serial.print("Aigua no bull!");
-  } 
-else if ( tempAigua >= 97 & tempAigua < 100) 
-  {
- Serial.print("Aigua casi bull");  
-  } 
-else if (tempAigua == 100)
-  {
- Serial.print("Aigua a 100C");
-  }
- else
-   { 
-Serial.print("Aigua bull!");
+    Serial.print(i);
+    
   }  
 }
 

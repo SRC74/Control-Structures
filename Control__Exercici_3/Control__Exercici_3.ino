@@ -10,7 +10,7 @@
 
 
 //*********************** VARIABLES **********************************
-int tempAigua = 97;
+float qualEnergy = 3;
 
 
 
@@ -18,23 +18,35 @@ int tempAigua = 97;
 
 void setup() {      // configura el final de salida
   
-Serial.begin(9600);     // set up Serial library at 9600 bps
-
-  if ( tempAigua < 97)
+Serial.begin(9600); 
+  
+  if (qualEnergy >= 43.2)
   {
-    Serial.print("Aigua no bull!");
-  } 
-else if ( tempAigua >= 97 & tempAigua < 100) 
-  {
- Serial.print("Aigua casi bull");  
-  } 
-else if (tempAigua == 100)
-  {
- Serial.print("Aigua a 100C");
+    Serial.print("G");
   }
- else
-   { 
-Serial.print("Aigua bull!");
+  else if (qualEnergy < 43.2 & qualEnergy > 38.2)
+  {
+    Serial.print("F");
+  }
+  else if (qualEnergy <= 38.2 & qualEnergy > 17.7)
+  {
+    Serial.print("E");
+  }
+  else if (qualEnergy <= 17.7 & qualEnergy > 11.1)
+  {
+    Serial.print("D");
+  }
+  else if (qualEnergy <= 11.1 & qualEnergy > 6.5)
+  {
+    Serial.print("C");
+  }
+  else if (qualEnergy <= 6.5 & qualEnergy > 3.5)
+  {
+    Serial.print("B");
+  }
+  else
+  {
+    Serial.print("A");
   }  
 }
 
